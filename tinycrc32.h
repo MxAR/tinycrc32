@@ -170,7 +170,6 @@ uint32_t crc32c_eq1024_pipelined_sse_qword(uint8_t *buf, uint64_t crc = -1) {
 
   crc_a = _mm_crc32_u64(crc_a, *((uint64_t *)buf));
 
-#pragma unroll
   for (std::size_t i = 1; i <= 42; ++i) {
     crc_a = _mm_crc32_u64(crc_a, buf_a[i]);
     crc_b = _mm_crc32_u64(crc_b, buf_b[i]);
