@@ -15,7 +15,7 @@ CXXFLAGS= -std=c++11
 # CXXFLAGS+= -DENABLE_PCLMULQDQ
 
 # comment out CXXFLAGS line below to disable optimizations
-CXXFLAGS += -O3 -fomit-frame-pointer -fstrict-aliasing -ffast-math
+CXXFLAGS += -O3 -DNDEBUG -fomit-frame-pointer -fstrict-aliasing -ffast-math
 
 # comment out CXXFLAGS line below to disable warnings
 CXXFLAGS += -Wall -Wextra
