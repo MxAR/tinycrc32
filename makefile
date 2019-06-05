@@ -23,7 +23,7 @@ CXXFLAGS += -Wall -Wextra
 all: test benchmark
 
 clean:
-	rm -f benchmark test
+	rm -f benchmark test *.out
 
 test:
 	$(CC) $(CXXFLAGS) test.cpp -lgtest -o test
