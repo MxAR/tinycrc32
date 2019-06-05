@@ -1,12 +1,12 @@
 SHELL=/bin/sh
-CC=clang++
-CXXFLAGS= -std=c++17 -march=native
+CC=g++
+CXXFLAGS= -std=c++11
 
 # if the current architecture support the SSE42 extension it makes
 # sense to uncomment the line below as an performance improvement
 # can be achieved
 
-# CXXLAGS+= -DENABLE_SSE42
+# CXXLAGS+= -march=native -DENABLE_SSE42
 
 # further if the PCLMULQDQ instruction are supported the crc32
 # instructions can be pipelined for even greater efficency; ergo
