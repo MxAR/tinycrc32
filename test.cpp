@@ -61,11 +61,11 @@ TEST_F(CRC32Test, main_test) {
 
   for (uint8_t i = 0; i <= 254; ++i) {
     data[i] = i;
-    EXPECT_EQ(crc32c(data, i), expected_result[i]);
+    EXPECT_EQ(crc32c<false>(data, i), expected_result[i]);
   }
 
   data[255] = 255;
-  EXPECT_EQ(crc32c(data, 255), expected_result[255]);
+  EXPECT_EQ(crc32c<false>(data, 255), expected_result[255]);
 
   delete[] data;
 }
