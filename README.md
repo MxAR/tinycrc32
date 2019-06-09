@@ -38,13 +38,5 @@ Laslty to enable the pipling of the CRC32 instruction using the `PCLMULQDQ` inst
 g++ -std=c++11 -DENABLE_SSE42 -DENABLE_PCLMULQDQ -o main
 ```
 
-## Negation of the result
-The original implementation of the CRC32 algorithm requires that the final value is negated and then returned. The author believes that this operation is superficial which is why the choice is given to the user in following way.
-```
-crc32c(data, n)        // not negated
-crc32c<false>(data, n) // not negated
-crc32c<true>(data, n)  // negated
-```
-
 ## Testing & Benchmarking
 The test and benchmark executable can be build by running `make test` and `make benchmark` respectively. It is important to note though that google-test is required for the test executable and google-benchmark for the benchmark executable. To enable hardware acceleration in the test and benchmark executable please check the makefile.
