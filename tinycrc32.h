@@ -257,7 +257,6 @@ uint32_t crc32c_pcl(uint8_t *buf, std::size_t length, uint64_t crc = -1) {
 
 /* combination of all methods to have an crc32 implementation that works on all
  * architectues and can process buffers of arbitrary length*/
-template <bool NEGATE_RESULT = false>
 uint32_t crc32c(uint8_t *buf, std::size_t length) {
 #ifdef ENABLE_SSE42
 #ifdef ENABLE_PCLMULQDQ
@@ -269,10 +268,6 @@ uint32_t crc32c(uint8_t *buf, std::size_t length) {
   uint32_t crc = crc32c_lut_hword(buf, length);
 #endif
 
-  if (NEGATE_RESULT) {
-    return ~crc;
-  } else {
-    return crc;
-  }
+  return ~crc;
 }
 #endif
